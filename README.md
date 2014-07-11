@@ -6,3 +6,8 @@ This is a dockerfile to build and run Mozilla SyncServer within a docker contain
 It is based on https://github.com/mozilla-services/syncserver install instructions.
 
 This is the very first version of the build ... which does not allow (for now) the customization of the config file.
+
+to run :
+```
+docker run -p 5000:5000 acaranta/syncserver
+```
