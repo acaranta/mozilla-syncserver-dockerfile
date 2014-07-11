@@ -9,5 +9,5 @@ This is the very first version of the build ... which does not allow (for now) t
 
 to run :
 ```
-docker run -p 5000:5000 acaranta/syncserver
+docker run -p 5000:5000 acaranta/mozilla-syncserver
 ```

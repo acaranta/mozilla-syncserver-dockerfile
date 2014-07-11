@@ -12,6 +12,10 @@ RUN apt-get install -y git build-essential python-virtualenv python2.7-dev
 
 RUN git clone https://github.com/mozilla-services/syncserver.git 
 RUN cd syncserver && make build
+RUN mkdir /opt/syncserver/ && cp /syncserver/syncserver.ini /opt/syncserver/config.ini
+RUN echo "sqluri = sqlite:////tmp/syncserver.db" >>/opt/syncserver/config.ini
+RUN echo "allow_new_users = true" >>/opt/syncserver/config.ini
+RUN perl -p -i -e 's#pserve ./syncserver.ini#pserve /opt/syncserver/config.ini#g' /syncserver/Makefile
 
 EXPOSE 5000
 
