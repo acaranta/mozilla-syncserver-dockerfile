@@ -3,9 +3,9 @@
 # TO_BUILD:       docker build -rm -t synserver .
 # TO_RUN:         docker run -p 5000:5000 syncserver
 
+FROM ubuntu:14.04
 MAINTAINER Arthur Caranta "arthur+code.mozillasyncdocker@caranta.com"
 
-FROM ubuntu:14.04
 
 RUN apt-get -y update
 RUN apt-get install -y git build-essential python-virtualenv python2.7-dev
